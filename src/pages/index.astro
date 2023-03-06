@@ -9,6 +9,8 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style lang="scss">
+  @import '../scss/main';
+
   .container {
     height: 100vh;
     width: min(100% - 5rem, 960px);
@@ -19,8 +21,15 @@ import Layout from '../layouts/Layout.astro';
 
     p {
       color: #333;
-      font-size: 2rem;
+      font-size: rem(32);
       font-weight: 400;
+
+      @include mq(lg) {
+        color: red;
+      }
+      @include mq(md) {
+        color: blue;
+      }
     }
   }
 </style>
