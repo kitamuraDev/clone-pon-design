@@ -1,35 +1,8 @@
 ---
+import Header from '../components/Header.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
-  <div class="container">
-    <p>Welcome to Astro.</p>
-  </div>
+<Layout title="PON DESIGN">
+  <Header />
 </Layout>
-
-<style lang="scss">
-  @import '../scss/main';
-
-  .container {
-    height: 100vh;
-    width: min(100% - 5rem, 960px);
-    margin-inline: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    p {
-      color: #333;
-      font-size: rem(32);
-      font-weight: 400;
-
-      @include mq(lg) {
-        color: red;
-      }
-      @include mq(md) {
-        color: blue;
-      }
-    }
-  }
-</style>
