@@ -1,0 +1,56 @@
+---
+interface Props {
+  link: string;
+  text: string;
+}
+
+const { link, text } = Astro.props;
+---
+
+<a href={link} class="link-button">
+  {text}
+</a>
+
+<style lang="scss">
+  @import '../scss/main';
+
+  .link-button {
+    display: block;
+    position: relative;
+    width: 220px;
+    padding: 18px 0;
+    color: #fff;
+    font-size: rem(14);
+    font-weight: bold;
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border-radius: 80px;
+    background-image: linear-gradient(to right, #7633a4 0%, #250d65 51%, #7633a4 100%);
+    background-size: 200% auto;
+
+    @include hover() {
+      &:hover {
+        background-position: right center;
+      }
+    }
+  }
+  .link-button::after {
+    content: '\f0da';
+    position: absolute;
+    top: 50%;
+    right: 1.5em;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    transition: 0.3s;
+    transform: translateY(-50%);
+  }
+  @include hover() {
+    .link-button:hover::after {
+      right: 1.2em;
+    }
+  }
+</style>
