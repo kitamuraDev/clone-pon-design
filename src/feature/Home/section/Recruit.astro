@@ -1,0 +1,74 @@
+---
+import BaseLinkButton from '../../../components/BaseLinkButton.astro';
+---
+
+<section id="recruit">
+  <div class="recruit-description">
+    <div class="desc-head">
+      <h2>RECRUIT</h2>
+      <p>採用情報</p>
+    </div>
+    <p class="desc-msg">私たちと一緒に働きませんか？</p>
+    <div class="recruit-link-wrapper">
+      <BaseLinkButton link="/recruit" text="more" />
+    </div>
+  </div>
+  <img src="/home/recruit.jpg" class="recruit-img" />
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  #recruit {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 70px 15px;
+    display: flex;
+
+    @include mq(md) {
+      flex-direction: column-reverse;
+      padding: 0 15px;
+    }
+  }
+
+  .recruit-description {
+    flex: 1;
+    text-align: center;
+    padding: 70px 40px;
+    background-color: #f0f0f0;
+  }
+
+  .desc-head {
+    margin-bottom: 30px;
+
+    h2 {
+      @include section-title;
+    }
+    p {
+      @include section-sub-title;
+    }
+  }
+  .desc-msg {
+    font-size: rem(15);
+    margin-bottom: 30px;
+
+    @include mq(md) {
+      font-size: rem(14);
+    }
+  }
+
+  .recruit-link-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .recruit-img {
+    width: 60%;
+    object-fit: cover;
+
+    @include mq(md) {
+      width: 100%;
+      height: 200px;
+    }
+  }
+</style>
