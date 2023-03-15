@@ -1,0 +1,119 @@
+---
+import BaseLinkButton from '../../../components/BaseLinkButton.astro';
+
+type ServiceCardItems = {
+  img: string;
+  title: string;
+  description: string;
+}[];
+
+const serviceCardItems: ServiceCardItems = [
+  {
+    img: '/home/service01.jpg',
+    title: 'Webサイト制作',
+    description: '新規サイトの制作はもちろんサイトリニューアルやランディングページの制作も可能です。',
+  },
+  {
+    img: '/home/service02.jpg',
+    title: 'Webサイト運用',
+    description: 'サイトの更新作業や独自のアクセス解析に基づいたサイト改善のご提案をいたします。',
+  },
+  {
+    img: '/home/service03.jpg',
+    title: 'アプリ開発',
+    description: 'スマートフォンアプリ開発の他、Vue.jsやReactによるWebアプリの開発が可能です。',
+  },
+];
+---
+
+<section id="service">
+  <div class="service-heading">
+    <h2>SERVICE</h2>
+    <p>事業内容</p>
+  </div>
+  <ul class="service-body">
+    {
+      serviceCardItems.map((card) => (
+        <li class="service-card">
+          <a href="#">
+            <img src={card.img} />
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="service-link-wrapper">
+    <BaseLinkButton link="/service" text="more" />
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  #service {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 70px 15px;
+    text-align: center;
+  }
+
+  .service-heading {
+    margin-bottom: 30px;
+
+    h2 {
+      @include section-title;
+    }
+    p {
+      @include section-sub-title;
+    }
+  }
+
+  .service-body {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include mq(md) {
+      gap: 40px;
+    }
+  }
+
+  .service-card {
+    width: 30%;
+    list-style: none;
+
+    @include mq(md) {
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      color: #333;
+      font-size: rem(18);
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #333;
+      font-size: rem(15);
+      text-align: left;
+    }
+  }
+
+  .service-link-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+</style>
