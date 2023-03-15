@@ -1,0 +1,93 @@
+---
+import BaseLinkButton from './BaseLinkButton.astro';
+---
+
+<seciton id="company">
+  <div class="heading">
+    <slot />
+  </div>
+  <div class="body">
+    <div class="body-head">
+      <span class="head-underline">サイトのゴール = <br class="sp-only" />夢を叶えること</span>
+    </div>
+    <div class="body-message">
+      <p>
+        お客様の夢を叶えること。<br />
+        それがWebサイトのゴールであり、<br class="sp-only" />私たちが目指すことです。<br />
+        だからこそちゃんと成果を出すサイトを<br class="sp-only" />全力でお作りします。<br />
+        お客様の笑顔を見たい。<br />
+        夢を実現する手助けをさせてください。
+      </p>
+    </div>
+  </div>
+  <div class="company-link-wrapper">
+    <BaseLinkButton link="/company" text="more" />
+  </div>
+</seciton>
+
+<style lang="scss">
+  @import '../scss/main';
+
+  #company {
+    display: block;
+    width: min(100%, 1300px);
+    margin-inline: auto;
+    padding: 100px 0;
+    background-image: url(/common/bg-circle.png), url(/common/bg-face.png);
+    background-size: contain;
+    background-position: center center;
+    text-align: center;
+
+    @include mq(md) {
+      padding: 60px 0;
+      background-image: url(/common/sp_bg-circle.png);
+      background-size: 375px;
+    }
+  }
+
+  .heading {
+    margin-bottom: 30px;
+  }
+
+  .body {
+    margin-bottom: 30px;
+  }
+
+  .body-head {
+    font-size: rem(40);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 40px;
+
+    @include mq(md) {
+      font-size: rem(32);
+      line-height: 1.5;
+    }
+  }
+  .head-underline {
+    background: linear-gradient(transparent 70%, #f5f534 0%);
+  }
+
+  .body-message p {
+    font-size: rem(15);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+
+    @include mq(md) {
+      font-size: rem(14);
+      line-height: 1.8;
+    }
+  }
+
+  .sp-only {
+    display: none;
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  .company-link-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+</style>
