@@ -1,0 +1,189 @@
+---
+import BaseLinkButton from '../../../components/BaseLinkButton.astro';
+
+const imagePaths = ['/home/lamina.jpg', '/home/smoothiesta.jpg', '/home/web-conference.jpg'];
+---
+
+<section id="works">
+  <div class="works-inner">
+    <div class="works-img-wrapper">
+      <div class="swiper-container js-swiper-container">
+        <div class="swiper-wrapper">
+          {
+            imagePaths.map((imagePath) => (
+              <div class="swiper-slide">
+                <img src={imagePath} />
+              </div>
+            ))
+          }
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <div class="works-description">
+      <div class="works-heading">
+        <h2>WORKS</h2>
+        <p>制作実績</p>
+      </div>
+      <p class="works-text">
+        様々なジャンルのWebサイト制作が可能です。<br />ご購入やお申込み数の増加などを実現します！
+      </p>
+      <div class="works-link-wrapper">
+        <BaseLinkButton link="/works" text="more" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  #works {
+    padding: 60px 0 40px 0;
+
+    @include mq(md) {
+      padding: 0;
+    }
+  }
+  .works-inner {
+    width: min(100%, 1300px);
+    margin-inline: auto;
+    padding: 60px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include mq(md) {
+      padding: 30px 20px 60px 20px;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  .works-inner::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: -1;
+    display: block;
+    width: 60%;
+    height: 100%;
+    transform: translateY(-50%);
+    background-color: #f0f0f0;
+
+    @include mq(md) {
+      top: auto;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 68%;
+      transform: translateY(0);
+    }
+  }
+
+  .works-img-wrapper {
+    width: 59.5238%;
+
+    @include mq(md) {
+      width: 100%;
+    }
+  }
+
+  // =========================
+  // swiper custom css
+  // =========================
+  .swiper-container {
+    padding-bottom: 30px;
+  }
+  .swiper-slide img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+
+  .swiper-button-prev::after {
+    content: '\f104';
+  }
+  .swiper-button-next::after {
+    content: '\f105';
+  }
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    color: #391e88;
+    transform: translateY(-50%);
+  }
+
+  // swiper pagination custom
+  .swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 0;
+    text-align: right;
+  }
+  // =========================
+
+  .works-description {
+    flex: 1;
+    text-align: center;
+  }
+
+  .works-heading {
+    margin-bottom: 30px;
+
+    h2 {
+      @include section-title;
+    }
+    p {
+      @include section-sub-title;
+    }
+  }
+
+  .works-text {
+    font-size: rem(15);
+    letter-spacing: 0.05em;
+    line-height: 1.9;
+    margin-bottom: 30px;
+
+    @include mq(md) {
+      font-size: rem(14);
+    }
+  }
+
+  .works-link-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<script type="module">
+  // cdn で読み込んでる swiper.min.js が下の swiper を検知しているイメージ
+  // なのでライブラリ使用者は以下のような swiper.js のインスタンスオブジェクトを定義してあげるだけでいい
+  const swiper = new Swiper('.js-swiper-container', {
+    autoplay: {
+      delay: 4000,
+    },
+    speed: 500,
+    loop: true,
+    effect: 'fade',
+
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+</script>
