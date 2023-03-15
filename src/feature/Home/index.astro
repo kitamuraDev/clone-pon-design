@@ -5,6 +5,7 @@ import Hero from './section/Hero.astro';
 import News from './section/News.astro';
 import Service from './section/Service.astro';
 import Works from './section/Works.astro';
+import EyeCatch from '../../components/EyeCatch.astro';
 ---
 
 <Layout title="PON DESIGN">
@@ -14,5 +15,24 @@ import Works from './section/Works.astro';
     <News />
     <Service />
     <Works />
+    <EyeCatch>
+      <div class="company-heading">
+        <h2>COMPANY</h2>
+        <p>私たちについて</p>
+      </div>
+    </EyeCatch>
   </main>
 </Layout>
+
+<style lang="scss">
+  @import '../../scss/main';
+
+  .company-heading {
+    h2 {
+      @include section-title;
+    }
+    p {
+      @include section-sub-title;
+    }
+  }
+</style>
