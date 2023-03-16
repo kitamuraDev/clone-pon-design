@@ -1,0 +1,64 @@
+---
+import BaseLinkButton from '../../../components/BaseLinkButton.astro';
+---
+
+<section id="contact">
+  <div class="contact-heading">
+    <h2>CONTACT</h2>
+    <p>お問い合わせ</p>
+  </div>
+  <p class="contact-body-msg">Webサイトの制作のご依頼やお見積りなど、<br class="sp-only" />お気軽にご相談ください。</p>
+  <div class="contact-link-wrapper">
+    <BaseLinkButton link="/contact" text="more" />
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  #contact {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 80px 15px;
+    margin-top: 40px;
+    background-color: #f0f0f0;
+    text-align: center;
+
+    @include mq(md) {
+      padding: 60px 15px;
+    }
+  }
+
+  .contact-heading {
+    margin-bottom: 30px;
+
+    h2 {
+      @include section-title;
+    }
+    p {
+      @include section-sub-title;
+    }
+  }
+
+  .contact-body-msg {
+    margin-bottom: 20px;
+    font-size: rem(15);
+    letter-spacing: 0.05em;
+
+    @include mq(md) {
+      font-size: rem(14);
+    }
+  }
+
+  .sp-only {
+    display: none;
+    @include mq(md) {
+      display: block;
+    }
+  }
+
+  .contact-link-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+</style>
