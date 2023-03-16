@@ -1,0 +1,74 @@
+---
+type FooterLinks = {
+  text: string;
+  path: string;
+}[];
+
+const footerLinks: FooterLinks = [
+  { text: 'HOME', path: '/' },
+  { text: 'NEWS', path: '/news' },
+  { text: 'SERVICE', path: '/service' },
+  { text: 'WORKS', path: '/works' },
+  { text: 'COMPANY', path: '/company' },
+  { text: 'RECRUIT', path: '/recruit' },
+  { text: 'CONTACT', path: '/contact' },
+];
+---
+
+<footer id="footer">
+  <ul class="footer-nav-list">
+    {
+      footerLinks.map((link) => (
+        <li class="footer-nav-item">
+          <a href={link.path}>{link.text}</a>
+        </li>
+      ))
+    }
+  </ul>
+  <p class="copyright"><a href="/">©PON DESIGN</a></p>
+</footer>
+
+<style lang="scss">
+  @import '../scss/main';
+
+  #footer {
+    padding: 60px 30px;
+    background-color: #120e19;
+  }
+
+  .footer-nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include mq(md) {
+      justify-content: flex-start;
+    }
+  }
+
+  .footer-nav-item {
+    list-style: none;
+    letter-spacing: 0.1em;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: rem(12);
+      padding: 5px;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    margin-top: 30px;
+
+    a {
+      text-decoration: none;
+      color: #a798b7;
+      font-size: rem(10);
+      letter-spacing: 0.05em;
+    }
+  }
+</style>
