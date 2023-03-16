@@ -191,15 +191,15 @@
   }
 </style>
 
-<script>
-  const menuBtn = document.querySelector('.menu-btn')!;
-  const headerNav = document.querySelector('.header-nav')!;
+<script is:inline type="module">
+  const menuBtn = document.querySelector('.menu-btn');
+  const headerNav = document.querySelector('.header-nav');
   menuBtn.addEventListener('click', () => {
     menuBtn.classList.toggle('is-active'); // メニューボタン
     headerNav.classList.toggle('is-show'); // ヘッダーナビゲーション
   });
 
-  const header = document.querySelector('#header')!;
+  const header = document.querySelector('#header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
       header.classList.add('is-active');

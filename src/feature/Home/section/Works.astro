@@ -162,7 +162,7 @@ const imagePaths = ['/home/lamina.jpg', '/home/smoothiesta.jpg', '/home/web-conf
   }
 </style>
 
-<script type="module">
+<script is:inline type="module">
   // cdn で読み込んでる swiper.min.js が下の swiper を検知しているイメージ
   // なのでライブラリ使用者は以下のような swiper.js のインスタンスオブジェクトを定義してあげるだけでいい
   const swiper = new Swiper('.js-swiper-container', {
