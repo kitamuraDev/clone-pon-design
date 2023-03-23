@@ -1,0 +1,245 @@
+---
+type NewsListItems = {
+  datetime: string;
+  datetimeDisplay: string;
+  category: string;
+  title: string;
+}[];
+const newsListItems: NewsListItems = [
+  {
+    datetime: '2023-03-12',
+    datetimeDisplay: '2023.03.12',
+    category: 'お知らせ',
+    title: 'Webデザインニュースサイト「ウェブマガジン」に取材いただきました',
+  },
+  {
+    datetime: '2023-03-13',
+    datetimeDisplay: '2023.03.13',
+    category: '制作実績',
+    title: 'Smoothiesta様のWebサイトを制作いたしました',
+  },
+  {
+    datetime: '2023-03-14',
+    datetimeDisplay: '2023.03.14',
+    category: '採用',
+    title: 'Webデザイナーを１名募集中です！',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title:
+      '（２行のテキストの場合）テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+  {
+    datetime: '2023-03-23',
+    datetimeDisplay: '2023.03.23',
+    category: 'お知らせ',
+    title: 'テキストが入りますテキストが入りますテキストが入りますテキストが入ります',
+  },
+];
+---
+
+<section id="news">
+  <ul class="news-list">
+    {
+      newsListItems.map((item) => (
+        <li class="news-list-item">
+          <div class="news-list-item-head">
+            <time class="news-list-item-date" datetime={item.datetime}>
+              {item.datetimeDisplay}
+            </time>
+            <p class="news-list-item-category">{item.category}</p>
+          </div>
+          <a href="#" class="news-list-item-link">
+            {item.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <div class="news-pagination">
+    <a href="#" class="news-pagination-link current-page">1</a>
+    <a href="#" class="news-pagination-link">2</a>
+    <a href="#" class="news-pagination-link">3</a>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  #news {
+    width: min(100%, 780px);
+    margin-inline: auto;
+    padding: 70px 15px;
+  }
+
+  .news-list {
+    list-style: none;
+    margin-bottom: 40px;
+  }
+  .news-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 15px;
+
+    @include mq(md) {
+      flex-direction: column;
+      gap: 3px;
+      margin-bottom: 30px;
+    }
+
+    .news-list-item-link {
+      text-decoration: none;
+      font-size: rem(14);
+      color: inherit;
+      letter-spacing: 0.05em;
+    }
+  }
+  .news-list-item-head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .news-list-item-date {
+      font-size: rem(14);
+      letter-spacing: 0.05em;
+    }
+    .news-list-item-category {
+      text-align: center;
+      font-size: rem(12);
+      font-weight: 700;
+      width: 80px;
+      padding: 4px 10px;
+      border-radius: 80px;
+      background-color: #e8e8e8;
+
+      @include mq(md) {
+        font-size: rem(11);
+      }
+    }
+  }
+
+  .news-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  .news-pagination-link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: #fff;
+    background-image: linear-gradient(135deg, #7633a4, #250d65);
+    font-size: rem(20);
+    font-weight: 700;
+    text-decoration: none;
+
+    @include hover() {
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  .news-pagination-link.current-page {
+    color: #333;
+    background-color: #f1ebf8;
+    background-image: none;
+    cursor: default;
+  }
+</style>
