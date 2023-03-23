@@ -1,0 +1,65 @@
+---
+interface Props {
+  breadcrumbText: string;
+}
+
+const { breadcrumbText } = Astro.props;
+---
+
+<div class="container">
+  <ul itemscope="" itemtype="https://schema.org/BreadcrumbList" class="breadcrumb-list">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-list-item">
+      <a href="/">home</a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" class="breadcrumb-list-item">
+      <a href="#">{breadcrumbText}</a>
+      <meta itemprop="position" content="2" />
+    </li>
+  </ul>
+</div>
+
+<style lang="scss">
+  @import '../scss/main';
+
+  .container {
+    background-color: #f0f0f0;
+    position: sticky;
+    top: 64px;
+    z-index: 1;
+  }
+
+  .breadcrumb-list {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 12px 15px;
+
+    @include mq(md) {
+      padding: 8px 15px;
+    }
+  }
+
+  .breadcrumb-list-item {
+    display: inline;
+    list-style: none;
+    text-transform: uppercase;
+    font-size: rem(12);
+
+    @include mq(md) {
+      font-size: rem(11);
+    }
+
+    a {
+      text-decoration: none;
+      color: #391e88;
+    }
+  }
+  .breadcrumb-list-item::after {
+    content: '>';
+    padding: 0 0.5em;
+    color: #555;
+  }
+  .breadcrumb-list-item:last-child::after {
+    content: '';
+  }
+</style>
