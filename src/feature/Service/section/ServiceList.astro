@@ -1,0 +1,108 @@
+---
+type ServiceCardItems = {
+  img: string;
+  title: string;
+  description: string;
+}[];
+
+const serviceCardItems: ServiceCardItems = [
+  {
+    img: '/home/service01.jpg',
+    title: 'Webサイト制作',
+    description:
+      '新規サイトはもちろん、サイトリニューアルやランディングページ制作も承っております。サイトのゴールはお客様の夢や目的を実現することです。そのためにまずはしっかりとお話をうかがい、サイトに必要な要素を洗い出します。その後、ワイヤーフレーム（サイトのレイアウト）の作成、デザインの制作、コーディングと進みます。制作の過程でお客様とのお打ち合わせを数回実施させていただき、ご要望とご意見を反映しながらサイトを制作していきます。',
+  },
+  {
+    img: '/home/service02.jpg',
+    title: 'Webサイト運用',
+    description:
+      'サイトの更新作業や独自のアクセス解析に基づいたサイト改善のご提案が可能です。日々の面倒な更新作業は私たちにおまかせください。テキストの修正やリンクの張り替えなどの簡単な作業から、特集ページやバナーのデザインまで可能です。また、アクセス解析によるサイト改善も承っております。ご購入やお申込数などにお悩みでしたらぜひご相談ください。サイトの課題を発見し、改善案のご提案から実装までワンストップで対応いたします。',
+  },
+  {
+    img: '/home/service03.jpg',
+    title: 'アプリ開発',
+    description:
+      'スマートフォンアプリ開発の他、Vue.jsやReactによるWebアプリの開発が可能です。 開発力のみならず、充実したユーザー体験をもたらすためのUXデザインにも自信があります。作って終わり、ではなくユーザーに愛されるUI（ユーザーインターフェース）を実現し、アプリ開発によるお客様の事業の目的を達成する推進力となることを目指します。',
+  },
+];
+---
+
+<section id="service-list">
+  <ul>
+    {
+      serviceCardItems.map((card) => (
+        <li class="service-list-item">
+          <div class="img-wrapper">
+            <img src={card.img} />
+          </div>
+          <div class="service-list-body">
+            <h3>{card.title}</h3>
+            <p>{card.description}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  #service-list {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 70px 15px;
+
+    @include mq(md) {
+      padding: 40px 15px;
+    }
+  }
+
+  .service-list-item {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    margin-bottom: 60px;
+
+    @include mq(md) {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .img-wrapper {
+    flex: 0 1 40%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .service-list-body {
+    flex: 1;
+
+    h3 {
+      font-size: rem(24);
+      font-weight: 700;
+      margin-bottom: 20px;
+
+      @include mq(md) {
+        text-align: center;
+        font-size: rem(18);
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+    }
+    p {
+      font-size: rem(15);
+      line-height: 1.8;
+      letter-spacing: 0.05em;
+
+      @include mq(md) {
+        font-size: rem(14);
+      }
+    }
+  }
+</style>
