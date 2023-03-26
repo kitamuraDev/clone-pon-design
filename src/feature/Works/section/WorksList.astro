@@ -1,0 +1,78 @@
+---
+type WorksList = {
+  img: string;
+  clientName: string;
+}[];
+
+const worksList: WorksList = [
+  { img: '/works/smoothiesta.jpg', clientName: 'Smoothiesta 様' },
+  { img: '/works/web-conference.jpg', clientName: 'Web Conference 様' },
+  { img: '/works/lamina.jpg', clientName: 'LAMINA 様' },
+  { img: '/works/citylab.jpg', clientName: 'CITYLab 様' },
+  { img: '/works/tabilog.jpg', clientName: 'TABILOG 様' },
+];
+---
+
+<section class="container">
+  <ul class="works-list">
+    {
+      worksList.map((work) => (
+        <li class="works-list-item">
+          <a href="#">
+            <img src={work.img} />
+            <p>{work.clientName}</p>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  .container {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 70px 15px;
+
+    @include mq(md) {
+      padding: 40px 15px;
+    }
+  }
+
+  .works-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include mq(md) {
+      gap: 40px;
+    }
+  }
+
+  .works-list-item {
+    list-style: none;
+    width: calc(33.3333% - 20px);
+
+    @include mq(md) {
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .works-list-item a img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .works-list-item a p {
+    text-align: center;
+    font-size: rem(16);
+    color: #333;
+  }
+</style>
