@@ -1,0 +1,59 @@
+<section class="container">
+  <div class="img-wrapper">
+    <img src="/company/ceo.jpg" />
+  </div>
+  <div class="msg-body">
+    <p>
+      テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+    </p>
+    <p>
+      テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります
+    </p>
+    <p>代表取締役社長 猫山ポン太郎</p>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  .container {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 70px 15px;
+    display: flex;
+    gap: 50px;
+
+    @include mq(md) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .img-wrapper {
+    flex: 0 1 40%;
+
+    @include mq(md) {
+      flex: 1;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .msg-body {
+    flex: 1;
+  }
+
+  .msg-body p {
+    font-size: rem(15);
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+  }
+
+  .msg-body p:nth-child(1),
+  .msg-body p:nth-child(2) {
+    margin-bottom: 24px;
+  }
+</style>
