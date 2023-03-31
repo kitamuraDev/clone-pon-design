@@ -1,0 +1,69 @@
+<section id="company-info">
+  <div class="company-info-heading">
+    <h2>会社概要</h2>
+  </div>
+  <dl class="company-info-table">
+    <dt>社名</dt>
+    <dd>株式会社PON DESIGN</dd>
+    <dt>設立</dt>
+    <dd>2025.02.10</dd>
+    <dt>代表取締役</dt>
+    <dd>猫山ポン太郎</dd>
+    <dt>資本金</dt>
+    <dd>1,000,000円</dd>
+    <dt>所在地</dt>
+    <dd>〒555-5555 東京都千代田区 ポンビルディング 606</dd>
+  </dl>
+  <div class="company-info-access"></div>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  #company-info {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 70px 15px;
+  }
+
+  .company-info-heading {
+    text-align: center;
+    margin-bottom: 30px;
+
+    h2 {
+      @include section-title;
+    }
+  }
+
+  .company-info-table {
+    display: flex;
+    flex-wrap: wrap;
+
+    dt {
+      width: 20%;
+      padding: 30px 10px;
+      border-bottom: solid 1px #ddd;
+      font-size: rem(16);
+      font-weight: 700;
+
+      @include mq(md) {
+        width: auto;
+        padding: 20px 0 4px;
+        border-bottom: none;
+        font-size: rem(14);
+      }
+    }
+    dd {
+      width: 80%;
+      padding: 30px 10px;
+      border-bottom: solid 1px #ddd;
+      font-size: rem(16);
+
+      @include mq(md) {
+        width: 100%;
+        padding: 4px 0 20px;
+        font-size: rem(14);
+      }
+    }
+  }
+</style>
