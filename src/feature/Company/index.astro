@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import HeroAtSubpage from '../../components/HeroAtSubpage.astro';
+import Breadcumb from '../../components/Breadcumb.astro';
+import EyeCatch from '../../components/EyeCatch.astro';
+import CeoMessage from './section/CeoMessage.astro';
+import AboutUs from './section/AboutUs.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import PageTopButton from '../../components/PageTopButton.astro';
+---
+
+<Layout title="COMPANY - 私たちについて｜PON DESIGN">
+  <Header />
+  <HeroAtSubpage title="COMPANY" subTitle="私たちについて" />
+  <Breadcumb breadcrumbText="company" />
+  <EyeCatch>
+    <div class="company-heading">
+      <h2>メッセージ</h2>
+    </div>
+  </EyeCatch>
+  <CeoMessage />
+  <AboutUs />
+  <Contact />
+  <Footer />
+  <PageTopButton />
+</Layout>
+
+<style lang="scss">
+  @import '../../scss/main';
+
+  .company-heading h2 {
+    @include section-title;
+  }
+</style>
