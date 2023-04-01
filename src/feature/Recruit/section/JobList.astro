@@ -1,0 +1,148 @@
+---
+import BaseLinkButton from '../../../components/BaseLinkButton.astro';
+---
+
+<section class="job-list">
+  <div class="container">
+    <div class="job-list-heading">
+      <h3>募集中の職種</h3>
+    </div>
+    <div class="job-list-detail">
+      <h4>Webデザイナー</h4>
+      <dl class="job-list-table">
+        <dt>雇用形態</dt>
+        <dd>正社員</dd>
+        <dt>給与</dt>
+        <dd>400万円〜600万円（経験・能力を考慮のうえ優遇）</dd>
+        <dt>仕事内容</dt>
+        <dd>Webサイトの制作。サイトのデザインとコーディングを担当していただきます。</dd>
+        <dt>勤務時間</dt>
+        <dd>10:00 〜 19:00（実働8時間、休憩1時間）</dd>
+        <dt>応募資格</dt>
+        <dd>
+          <p>
+            PhotoshopやXDなどのデザインツールの使い方を理解し、コーディングの基礎スキルがある方。<br />
+            実務未経験でも学校や独学で学習した方を歓迎します。
+          </p>
+          <ul>
+            <li>デザインやコーディングを楽しめる方</li>
+            <li>常にアンテナを張って積極的にトレンドや最新の技術を取り入れる方</li>
+            <li>お客様と一緒に楽しみながら高い目的を目指せる方</li>
+          </ul>
+        </dd>
+      </dl>
+      <div class="job-list-link">
+        <BaseLinkButton link="#" text="応募する" />
+        <span class="job-list-link-more"> 求人サイトへ遷移します</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../../../scss/main';
+
+  .container {
+    width: min(100%, 1140px);
+    margin-inline: auto;
+    padding: 0 15px;
+  }
+
+  .job-list-heading {
+    text-align: center;
+    margin-bottom: 30px;
+
+    h3 {
+      font-size: rem(32);
+      font-weight: 700;
+      line-height: 1;
+      color: #391e88;
+
+      @include mq(md) {
+        font-size: rem(24);
+      }
+    }
+  }
+
+  .job-list-detail {
+    padding: 60px 95px;
+    border: 1px solid #b067cf;
+    border-radius: 6px;
+    background-color: #fff;
+
+    @include mq(md) {
+      padding: 30px 20px;
+    }
+  }
+  .job-list-detail h4 {
+    text-align: center;
+    font-size: rem(24);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 30px;
+
+    @include mq(md) {
+      font-size: rem(16);
+      margin-bottom: 20px;
+    }
+  }
+  .job-list-table {
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq(md) {
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+
+    dt {
+      width: 20%;
+      padding: 30px 10px;
+      border-bottom: solid 1px #ddd;
+      font-size: rem(15);
+      font-weight: 700;
+
+      @include mq(md) {
+        width: auto;
+        padding: 20px 0 4px;
+        font-size: rem(14);
+        border-bottom: none;
+      }
+    }
+    dd {
+      width: 80%;
+      padding: 30px 10px;
+      border-bottom: solid 1px #ddd;
+      font-size: rem(15);
+      letter-spacing: 0.05em;
+
+      @include mq(md) {
+        width: 100%;
+        padding: 4px 0 20px;
+        font-size: rem(14);
+      }
+    }
+
+    dd p {
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    dd ul {
+      margin-left: 20px;
+    }
+    dd ul li {
+      line-height: 1.8;
+    }
+  }
+
+  .job-list-link {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .job-list-link-more {
+    font-size: rem(12);
+  }
+</style>
