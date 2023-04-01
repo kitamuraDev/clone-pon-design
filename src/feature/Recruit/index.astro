@@ -3,10 +3,33 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import HeroAtSubpage from '../../components/HeroAtSubpage.astro';
 import Breadcumb from '../../components/Breadcumb.astro';
+import RecruitMessage from './section/RecruitMessage.astro';
+import JobList from './section/JobList.astro';
+import CompanyMovie from './section/CompanyMovie.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import PageTopButton from '../../components/PageTopButton.astro';
 ---
 
 <Layout title="RECRUIT - 採用情報｜PON DESIGN">
   <Header />
   <HeroAtSubpage title="RECRUIT" subTitle="採用情報" />
   <Breadcumb breadcrumbText="recruit" />
+  <main class="recruit-bg">
+    <RecruitMessage />
+    <JobList />
+    <CompanyMovie />
+  </main>
+  <Contact />
+  <Footer />
+  <PageTopButton />
 </Layout>
+
+<style lang="scss">
+  @import '../../scss/main';
+
+  .recruit-bg {
+    background-image: url(/recruit/bg-geometry.png);
+    background-repeat: repeat;
+  }
+</style>
