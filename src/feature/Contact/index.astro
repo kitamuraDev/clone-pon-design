@@ -3,10 +3,14 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import HeroAtSubpage from '../../components/HeroAtSubpage.astro';
 import Breadcumb from '../../components/Breadcumb.astro';
+import ContactForm from './section/ContactForm.astro';
 ---
 
 <Layout title="CONTACT - お問い合わせ｜PON DESIGN">
   <Header />
   <HeroAtSubpage title="CONTACT" subTitle="お問い合わせ" />
   <Breadcumb breadcrumbText="contact" />
+  <main>
+    <ContactForm />
+  </main>
 </Layout>
